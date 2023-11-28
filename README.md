@@ -8,6 +8,10 @@ I do really like this idea, I am worried about the quality of the sensors though
 [Amazon link for sensor](https://www.amazon.com/BONATECH-Arduino-Modules-Project-Detection/dp/B07D9H74LT/ref=sr_1_15crid=31P6P1JIXN3IB&keywords=air+quality+sensor+co2+arduino&qid=1701150269&sprefix=air+quality+sensor+co2+arduino%2Caps%2C80&sr=8-15)  
 [Link for servo](https://www.amazon.com/Micro-Servos-Helicopter-Airplane-Controls/dp/B07MLR1498/ref=sr_1_8?crid=8M0VCKCGTCU3&keywords=servo%2Bfor%2Barduino&qid=1701147372&sprefix=servo%2Bfor%2Barduino%2Caps%2C100&sr=8-8&th=1)  
 [![GkYCw2.th.png](https://imgpile.com/images/GkYCw2.th.png)](https://imgpile.com/i/GkYCw2)  
-**2. Air Quality Monitor**  
+**2.Difficult Plant Tamagotchi**  
+Inspired by the [Plant Communicator] (https://projecthub.arduino.cc/Arduino_Genuino/plant-communicator-0ab3c8) I thought I could use a soil [moisture sensor] (https://www.amazon.com/HiLetgo-Moisture-Automatic-Watering-Arduino/dp/B01DKISKLO/ref=sr_1_4?crid=1LFBH8EIGRMBI&keywords=moisture+sensor+arduino&qid=1701147020&sprefix=moisture+sensor+%2Caps%2C117&sr=8-4), to create input and feed it into a 'Tamagotchi' like interaction in processing. The thought behind this is that I inherited a lot of plants from someone who used to live in my apartment and there are a couple of plants that are difficult to take care of and I have killed some of them. The plant in processing could be named, and the conditions for when to alert the plant carer could be customizable, making it a good tool for plant sitters.  
+[![GkYZBG.th.png](https://imgpile.com/images/GkYZBG.th.png)](https://imgpile.com/i/GkYZBG)  
+**3.Difficult Plant Tamagotchi**  
+
 
 
