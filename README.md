@@ -10,7 +10,7 @@ I do really like this idea, I am worried about the quality of the sensors though
 [![GkYCw2.png](https://imgpile.com/images/GkYCw2.png)](https://imgpile.com/i/GkYCw2)
 **2.Difficult Plant Tamagotchi**  
 Inspired by the [Plant Communicator](https://projecthub.arduino.cc/Arduino_Genuino/plant-communicator-0ab3c8) I thought I could use a soil [moisture sensor](https://www.amazon.com/HiLetgo-Moisture-Automatic-Watering-Arduino/dp/B01DKISKLO/ref=sr_1_4?crid=1LFBH8EIGRMBI&keywords=moisture+sensor+arduino&qid=1701147020&sprefix=moisture+sensor+%2Caps%2C117&sr=8-4), to create input and feed it into a 'Tamagotchi' like interaction in processing. The thought behind this is that I inherited a lot of plants from someone who used to live in my apartment and there are a couple of plants that are difficult to take care of and I have killed some of them. The plant in processing could be named, and the conditions for when to alert the plant carer could be customizable, making it a good tool for plant sitters.  
-[![GkYZBG.th.png](https://imgpile.com/images/GkYZBG.th.png)](https://imgpile.com/i/GkYZBG)  
+[![GkYZBG.md.png](https://imgpile.com/images/GkYZBG.md.png)](https://imgpile.com/i/GkYZBG)  
 **3.Portrait of You(r eyes)?**  
 Using the webcam to take a picture (of an eye maybe?), taking that image processing could rasterize it, and via an arduino, the size of the circles / colors could be generated. Additionally, a customization feature such as your name could also be taken as input, so the poster is as personal as possible. It could include name, date, time + eye graphic.  
 [![GkiRuP.png](https://imgpile.com/images/GkiRuP.png)](https://imgpile.com/i/GkiRuP)  
