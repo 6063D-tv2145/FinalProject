@@ -18,7 +18,7 @@ Inspiration was taken from our pixel processing class and these Pinterest poster
 ![GkiDEC.jpg](https://imgpile.com/images/GkiDEC.jpg)
 ![GkiCVo.jpg](https://imgpile.com/images/GkiCVo.jpg)
 
-**4.Typography poster**
+**4.Typography poster**  
 This idea is the least fleshed out, but I was thinking I could use arduino input via a button or something similar, to change attributes of text on a poster. The text could potentially be also taken in as custom text (but would likely have a character limit), and interacting with the arduino could change color, letter placement, or maybe even something fun like make it collapse (see gravity poster).  
 [![GkiwBW.png](https://imgpile.com/images/GkiwBW.png)](https://imgpile.com/i/GkiwBW)  
 ![Gki9Cj.jpg](https://imgpile.com/images/Gki9Cj.jpg)
