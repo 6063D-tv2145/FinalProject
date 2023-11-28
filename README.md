@@ -1,4 +1,4 @@
-# FinalProject
+# Final Project Ideas
 **1. Air Quality Monitor**
 I have seen in many places, that there are CO2 monitors that can be purchased and used with Arduinos. I was thinking that it would be great to have this sensor collect input, and in processing, create an aesthetically pleasing visual, that is continuously updating with the data, and lets the user know when to open the windows, and in cases of very bad air quality, warn the user and give them resources on what to do to keep themselves safe.
 Additionally, (this is quite a stretch), but I found this bird air quality sensor, in which the bird 'drops dead' when the air quality is bad. I thought to myself if something of a similar concept i.e. movement is initiated based on the air quality input, would be feasible using a servo motor (which I've seen used in several projects on the arduino project hub).
