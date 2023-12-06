@@ -1,15 +1,16 @@
 # Milestone II
-**Plant Buddy**
+**Plant Buddy**  
 The project will be called Plant Buddy -- a smart assistant for kids' first plant. I am using a moisture sensor, which is feeding information into a p5.js sketch. Throughout the midterm, I realized I very much enjoy making gamified products, especially geared toward a younger audience. I think there is importance to introducing technology as a practical and helpful tool in early development, rather than a purely entertainment.
   
 Plant Buddy Inspiration Mood Board:  
 [![GghHES.png](https://imgpile.com/images/GghHES.png)](https://imgpile.com/i/GghHES)
 
-**1) Code**
+**1) Code**  
 Disclaimer: I had technical issues getting Arduino to communicate with the sketch, so I was not able to properly test my code, but I do believe that it should work approximately as envisioned.
   
 The code itself is along the following lines:  
-Sketch:  
+  
+**Sketch:**   
 if ( humidity value > 45%) {  
   animated sprite of plant buddy getting covered in water -- I would like to see if I can make my own sprites (extrenally illustrated) and animated via p5.play;     
 }
@@ -19,8 +20,8 @@ else if ( humidity value > 18% humidity value < 40%) {
 else ( humidity value < 15%( {  
 animated sprite of plant budy doing well/slightly nodding head 
 }  
-
-arduino:  
+  
+**arduino:**  
 Taking in the value and converting it into percentage.
   
 I need to calibrate and do more observations on what these numbers should be. As of now, referred to the general guidelines of plants having recommended humidity of 20%-40%.  
@@ -28,7 +29,7 @@ I need to calibrate and do more observations on what these numbers should be. As
  For now, I've tested values outside of soil, medium-moisture soil, freshly watered soil, etc. I am also finding differences in values based on how deep the sensor is within the ground, therefore I will have to monitor more closely how the sensor is put in.
 [![GghO7l.png](https://imgpile.com/images/GghO7l.png)](https://imgpile.com/i/GghO7l)
     
-Backdrop:
+**Backdrop:**  
 - scene of a windowsil from inside of an apartment; on the wall there will be a clock, with info about moisture (showcasing the percentage, date, and time)
 - changing time, changes background view from the window every minute -- colors according to the sunrise/sunset
     
