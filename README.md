@@ -6,7 +6,9 @@ Plant Buddy Inspiration Mood Board:
 [![GghHES.png](https://imgpile.com/images/GghHES.png)](https://imgpile.com/i/GghHES)
 
 **1) Code**  
-Disclaimer: I had technical issues getting Arduino to communicate with the sketch, so I was not able to properly test my code, but I do believe that it should work approximately as envisioned.
+Disclaimer 1: I had technical issues getting Arduino to communicate with the sketch, so I was not able to properly test my code, but I do believe that it should work approximately as envisioned.
+
+Disclaimer 2: Figured the communication issue out with your help, now the sketch shows different states. According to this format though, it is not operating in percentages -- something to fix for next time
   
 The code itself is along the following lines:  
   
