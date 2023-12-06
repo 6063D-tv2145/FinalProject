@@ -1,23 +1,6 @@
 let mSerial;
 let readyToRead;
 
-function receiveSerial() {
-  let line = mSerial.readUntil("\n");
-  trim(line);
-  if (!line) return;
-
-  if (line.charAt(0) != "{") {
-    print("error: ", line);
-    readyToReceive = true;
-    return;
-  }
-
-  let data = JSON.parse(line).data;
-
-  readyToReceive = true;
-}
-
-
 function connect(){
   mSerial.open(9600)
   readyToRead=true;
@@ -35,24 +18,22 @@ function setup() {
 }
 
 function draw() {
-  if (readyToRead){
+  if (mSerial.opened() && readyToRead){
     mSerial.clear();
     mSerial.write(10);
     readyToRead = false;
-  
   }
 
   if (mSerial.opened() && mSerial.availableBytes() > 0) {
-    let mLine = mSerial.readUntil ("\n");
-    print(mLine);
+    let humidity = mSerial.readUntil ("\n");
+    print(humidity);
 
-    mLineValue = parseInt(mLine);
 
-    if (mLineValue > humidity) {
+    if (humidity < 2700) {
       background("CornflowerBlue"); //plant is "drowning"
-    } else if (humidity > 18 && humidity < 40) {
+    } else if (humidity < 3299 && humidity > 2700) {
       background("DarkSeaGreen"); // plant is doing well
-    } else if (humidity < 15) {
+    } else if (humidity > 3531 && humidity > 3299) {
       background("Coral"); // plant is in drought
     }
 
