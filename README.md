@@ -6,30 +6,39 @@ Plant Buddy Inspiration Mood Board:
 [![GghHES.png](https://imgpile.com/images/GghHES.png)](https://imgpile.com/i/GghHES)
 
 **1) Code**
-The code itself would be along the following lines:
-
-if ( humidity value < xyz && humidity value < xyz) {
-  animated sprite of plant buddy getting covered in water -- I would like to see if I can make my own sprites (extrenally illustrated) and animated via p5.play; 
+Disclaimer: I had technical issues getting Arduino to communicate with the sketch, so I was not able to properly test my code, but I do believe that it should work approximately as envisioned.
+  
+The code itself is along the following lines:  
+Sketch:  
+if ( humidity value > 45%) {  
+  animated sprite of plant buddy getting covered in water -- I would like to see if I can make my own sprites (extrenally illustrated) and animated via p5.play;     
 }
-else if ( humidity value < && humidity value < xyz) {
-  animated sprite of a plant buddy's eyes turning into X-X -- symbolizing dryness
-}
-else ( humidity value < && humidity value < xyz( {
+else if ( humidity value > 18% humidity value < 40%) {  
+  animated sprite of a plant buddy's eyes turning into X-X -- symbolizing dryness  
+}  
+else ( humidity value < 15%( {  
 animated sprite of plant budy doing well/slightly nodding head 
-}
+}  
 
-I need to calibrate and do some more observations on what these numbers should be. For now, I've tested values outside of soil, medium-moisture soil, freshly watered soil, etc. I am also finding differences in values based on how deep the sensor is within the ground, therefore I will have to monitor more closely how the sensor is put in.
+arduino:  
+Taking in the value and converting it into percentage.
+  
+I need to calibrate and do more observations on what these numbers should be. As of now, referred to the general guidelines of plants having recommended humidity of 20%-40%.  
+  
+ For now, I've tested values outside of soil, medium-moisture soil, freshly watered soil, etc. I am also finding differences in values based on how deep the sensor is within the ground, therefore I will have to monitor more closely how the sensor is put in.
 [![GghO7l.png](https://imgpile.com/images/GghO7l.png)](https://imgpile.com/i/GghO7l)
     
-Background:
+Backdrop:
 - scene of a windowsil from inside of an apartment; on the wall there will be a clock, with info about moisture (showcasing the percentage, date, and time)
 - changing time, changes background view from the window every minute -- colors according to the sunrise/sunset
     
 **2) Circuit**
-Arduino + moisture sensor + potentially a battery pack
+Arduino + moisture sensor + potentially a power bank
+[![GgkidL.png](https://imgpile.com/images/GgkidL.png)](https://imgpile.com/i/GgkidL)
 
     
-**3) Enclosure**
+**3) Enclosure**  
+[![GgkPZ1.png](https://imgpile.com/images/GgkPZ1.png)](https://imgpile.com/i/GgkPZ1)  
 For the enclosure, I will create a either 3d printed or laser cut box to keep the breadboard and arduino in.There will be a small hole to let the cord of the moisture sensor out. On top of the box, I will create a polymer clay sculpture of the Plant Buddy, who will be holding a paper cup to its ear, pretending to be on a phone line with the plant. The cord will be protected via a layer of green yarn (I am thinking to crochet over the chord, maybe add crochet leaves as well, to help it blend in), and the sensor will be put into a plant (and also have a polymer clay "paper cup" attached to it. Giving the visual of the plant buddy phoning with the plant.
   
 I think that with this entire project, I am trying to practice a product-development mindset, thinking about a good narrative, and also a strong use case. I find it meaningful to make things I could imagine people actually wanting to own (in some improved version)
