@@ -1,3 +1,39 @@
+# Milestone II
+**Plant Buddy**
+The project will be called Plant Buddy -- a smart assistant for kids' first plant. I am using a moisture sensor, which is feeding information into a p5.js sketch. Throughout the midterm, I realized I very much enjoy making gamified products, especially geared toward a younger audience. I think there is importance to introducing technology as a practical and helpful tool in early development, rather than a purely entertainment.
+  
+Plant Buddy Inspiration Mood Board:  
+[![GghHES.png](https://imgpile.com/images/GghHES.png)](https://imgpile.com/i/GghHES)
+
+**1) Code**
+The code itself would be along the following lines:
+
+if ( humidity value < xyz && humidity value < xyz) {
+  animated sprite of plant buddy getting covered in water -- I would like to see if I can make my own sprites (extrenally illustrated) and animated via p5.play; 
+}
+else if ( humidity value < && humidity value < xyz) {
+  animated sprite of a plant buddy's eyes turning into X-X -- symbolizing dryness
+}
+else ( humidity value < && humidity value < xyz( {
+animated sprite of plant budy doing well/slightly nodding head 
+}
+
+I need to calibrate and do some more observations on what these numbers should be. For now, I've tested values outside of soil, medium-moisture soil, freshly watered soil, etc. I am also finding differences in values based on how deep the sensor is within the ground, therefore I will have to monitor more closely how the sensor is put in.
+[![GghO7l.png](https://imgpile.com/images/GghO7l.png)](https://imgpile.com/i/GghO7l)
+    
+Background:
+- scene of a windowsil from inside of an apartment; on the wall there will be a clock, with info about moisture (showcasing the percentage, date, and time)
+- changing time, changes background view from the window every minute -- colors according to the sunrise/sunset
+    
+**2) Circuit**
+Arduino + moisture sensor + potentially a battery pack
+
+    
+**3) Enclosure**
+For the enclosure, I will create a either 3d printed or laser cut box to keep the breadboard and arduino in.There will be a small hole to let the cord of the moisture sensor out. On top of the box, I will create a polymer clay sculpture of the Plant Buddy, who will be holding a paper cup to its ear, pretending to be on a phone line with the plant. The cord will be protected via a layer of green yarn (I am thinking to crochet over the chord, maybe add crochet leaves as well, to help it blend in), and the sensor will be put into a plant (and also have a polymer clay "paper cup" attached to it. Giving the visual of the plant buddy phoning with the plant.
+  
+I think that with this entire project, I am trying to practice a product-development mindset, thinking about a good narrative, and also a strong use case. I find it meaningful to make things I could imagine people actually wanting to own (in some improved version)
+
 # Final Project Ideas
 **1. Air Quality Monitor**
 I have seen in many places, that there are CO2 monitors that can be purchased and used with Arduinos. I was thinking that it would be great to have this sensor collect input, and in processing, create an aesthetically pleasing visual, that is continuously updating with the data, and lets the user know when to open the windows, and in cases of very bad air quality, warn the user and give them resources on what to do to keep themselves safe.
