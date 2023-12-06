@@ -42,6 +42,12 @@ Arduino + moisture sensor + potentially a power bank
 [![GgkPZ1.png](https://imgpile.com/images/GgkPZ1.png)](https://imgpile.com/i/GgkPZ1)  
 For the enclosure, I will create a either 3d printed or laser cut box to keep the breadboard and arduino in.There will be a small hole to let the cord of the moisture sensor out. On top of the box, I will create a polymer clay sculpture of the Plant Buddy, who will be holding a paper cup to its ear, pretending to be on a phone line with the plant. The cord will be protected via a layer of green yarn (I am thinking to crochet over the chord, maybe add crochet leaves as well, to help it blend in), and the sensor will be put into a plant (and also have a polymer clay "paper cup" attached to it. Giving the visual of the plant buddy phoning with the plant.
   
+  
+here are some progress sketches for the enclosure, that lead me to the above, more refined idea. I first thought I could enclose the entire circuit into an object that could be stuck into the plant, however, i found it to be quite big and bulky. I also went back and forth on this being a plant sitting tool, but the more I thought about, the more I realized that adults would perhaps not find this type of tool as helpful (based on the limited capabilities I could provide), so I started thinking how this tool could be used educationally, for a different audience. There were also some ideas of embedding the sensor into a pot, but that felt like a risky thing to do as a beginner who would be combining water and electronics.  
+![GgkAvi.jpg](https://imgpile.com/images/GgkAvi.jpg)
+![Ggkqhw.jpg](https://imgpile.com/images/Ggkqhw.jpg)
+![Ggk2rF.jpg](https://imgpile.com/images/Ggk2rF.jpg)
+  
 I think that with this entire project, I am trying to practice a product-development mindset, thinking about a good narrative, and also a strong use case. I find it meaningful to make things I could imagine people actually wanting to own (in some improved version)
 
 # Final Project Ideas
