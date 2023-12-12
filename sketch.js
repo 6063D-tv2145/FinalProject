@@ -1,5 +1,47 @@
 let mSerial;
 let readyToRead;
+let currentHour;
+
+let dryPlantAni;
+let drowningPlantAni;
+let goodPlantAni;
+
+
+
+let windowColors = [
+  // /Night
+  [226, 208, 217], // 00:00 
+  [217, 194, 210], // 01:00 
+  [204, 172, 182], // 02:00 
+  [191, 176, 154], // 03:00 
+  [178, 148, 126], // 04:00 
+
+  //Sunrise
+  [165, 123, 98], // 05:00 
+  [151, 98, 70], // 06:00 
+  [137, 73, 42], // 07:00
+  [124, 54, 14], // 08:00 
+  [110, 35, 0], // 09:00 
+
+  // Day
+  [243, 233, 210], // 10:00 
+  [249, 226, 181], // 11:00 
+  [253, 242, 154], // 12:00 
+  [248, 240, 128], // 13:00 
+  [241, 229, 106], // 14:00
+  [235, 220, 84], // 15:00 
+  [228, 211, 62], // 16:00 
+  [221, 201, 40], // 17:00 
+
+  // Sunset 
+  [207, 192, 0], // 18:00
+  [207, 183, 0], // 19:00
+  [245, 226, 217], // 20:00
+  [242, 208, 202], // 21:00 
+  [237, 190, 203], // 22:00 
+  [232, 169, 202], // 23:00
+];
+
 
 function connect(){
   mSerial.open(9600)
@@ -15,9 +57,66 @@ function setup() {
   let mConnectButton = createButton("Connect To Serial");
   mConnectButton.position(width / 2, height / 2);
   mConnectButton.mousePressed(connect);
+
+
+  dryPlantAni = loadAnimation(
+		'Assets/dryplant/plantbuddy-dry-01.png',
+		'Assets/dryplant/plantbuddy-dry-02.png',
+		'Assets/dryplant/plantbuddy-dry-03.png',
+		'Assets/dryplant/plantbuddy-dry-04.png',
+    );
+
+  dryPlantAni.frameDelay = 10
+
+  drowningPlantAni = loadAnimation(
+		'Assets/drowningplant/plantbuddy-drowning-01.png',
+		'Assets/drowningplant/plantbuddy-drowning-02.png',
+		'Assets/drowningplant/plantbuddy-drowning-03.png',
+		'Assets/drowningplant/plantbuddy-drowning-04.png',
+    );
+
+  drowningPlantAni.frameDelay = 10
+
+  goodPlantAni = loadAnimation(
+		'Assets/goodplant/plantbuddy-good-01.png',
+		'Assets/goodplant/plantbuddy-good-02.png',
+		'Assets/goodplant/plantbuddy-good-03.png',
+		'Assets/goodplant/plantbuddy-good-04.png',
+    );
+
+  goodPlantAni.frameDelay = 10
+
+
 }
 
 function draw() {
+  background(246, 240, 236)
+
+
+    //wallpaper for loop
+    for (let wXpos = 0; wXpos <= width; wXpos += 190) {
+      drawWallpaper(wXpos, 100);
+    }
+
+    //table
+    fill(255, 209, 179)
+    rect(0,windowHeight/1.3,windowWidth,windowHeight)
+
+
+  // Get the current hour
+  currentHour = hour();
+  
+  // color based on the hour
+  let colorIndex = currentHour % windowColors.length;
+  let color = windowColors[colorIndex];
+
+  // Draw the window
+  fill(color);
+  stroke("white");
+  strokeWeight(3)
+  rectMode(CENTER)
+  rect(windowWidth/2, windowHeight/3, 600, 450, 20);
+
   if (mSerial.opened() && readyToRead){
     mSerial.clear();
     mSerial.write(10);
@@ -30,16 +129,21 @@ function draw() {
 
 
     if (humidity < 2700) {
-      background("CornflowerBlue"); //plant is "drowning"
+      animation(drowningPlantAni, 550, 450); //plant is "drowning"
     } else if (humidity < 3299 && humidity > 2700) {
-      background("DarkSeaGreen"); // plant is doing well
-    } else if (humidity > 3531 && humidity > 3299) {
-      background("Coral"); // plant is in drought
+      animation(goodPlantAni, 550, 450); // plant is doing well
+    } else if (humidity > 3299) {
+      animation(dryPlantAni, 550, 450) // plant is in drought
     }
-
 
     readyToRead = true;
   } 
 
+  }
 
+function drawWallpaper (wXpos,barWidth){
+  strokeWeight (0)
+  fill(255,120,95)
+  rectMode(CORNER)
+  rect(wXpos, 0, barWidth, windowHeight)
 }

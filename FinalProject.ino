@@ -7,12 +7,11 @@ void setup() {
 
 void loop() {
   int a0v = analogRead(A0);
-  int humidity = map(a0v, water, noWater, 100,0);
 
   if (Serial.available() > 0) {
     int byteIn = Serial.read();
     if (byteIn == 10) {
-     Serial.print(humidity);
+     Serial.println(a0v);
     }
   }
  delay(10);
