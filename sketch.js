@@ -6,6 +6,8 @@ let dryPlantAni;
 let drowningPlantAni;
 let goodPlantAni;
 
+let currentHumidityState=0;
+
 
 
 let windowColors = [
@@ -66,7 +68,7 @@ function setup() {
 		'Assets/dryplant/plantbuddy-dry-04.png',
     );
 
-  dryPlantAni.frameDelay = 10
+  dryPlantAni.frameDelay = 10;
 
   drowningPlantAni = loadAnimation(
 		'Assets/drowningplant/plantbuddy-drowning-01.png',
@@ -75,7 +77,7 @@ function setup() {
 		'Assets/drowningplant/plantbuddy-drowning-04.png',
     );
 
-  drowningPlantAni.frameDelay = 10
+  drowningPlantAni.frameDelay = 10;
 
   goodPlantAni = loadAnimation(
 		'Assets/goodplant/plantbuddy-good-01.png',
@@ -84,7 +86,7 @@ function setup() {
 		'Assets/goodplant/plantbuddy-good-04.png',
     );
 
-  goodPlantAni.frameDelay = 10
+  goodPlantAni.frameDelay = 10;
 
 
 }
@@ -93,7 +95,7 @@ function draw() {
   background(246, 240, 236)
 
 
-    //wallpaper for loop
+  //wallpaper for loop
     for (let wXpos = 0; wXpos <= width; wXpos += 190) {
       drawWallpaper(wXpos, 100);
     }
@@ -129,16 +131,34 @@ function draw() {
 
 
     if (humidity < 2700) {
-      animation(drowningPlantAni, 550, 450); //plant is "drowning"
-    } else if (humidity < 3299 && humidity > 2700) {
-      animation(goodPlantAni, 550, 450); // plant is doing well
-    } else if (humidity > 3299) {
-      animation(dryPlantAni, 550, 450) // plant is in drought
+      currentHumidityState=0
+      // clear();
+      // animation(drowningPlantAni, 550, 450); //plant is "drowning"
+    } else if (humidity < 3299) {
+      currentHumidityState=1
+      // clear();
+      // animation(goodPlantAni, 550, 450); // plant is doing well
+    } else if (humidity > 3298) {
+      currentHumidityState=2
+      // clear();
+      // animation(dryPlantAni, 550, 449) // plant is in drought
     }
 
+  
+// keeping track of the 4 last values, and only shift the sprite when the last 4 have been the same
+// week 12 -- taking an average; would manage the spikes; consistent values; after the average, send over the average to print instead of the raw value
+// make a global variable that keeps track of which state I am in -- and the if statement updates the variable;
     readyToRead = true;
   } 
 
+  if (currentHumidityState==0) {
+    animation(drowningPlantAni, 550, 450); //plant is "drowning"
+  } else if (currentHumidityState==1) {
+    animation(goodPlantAni, 550, 450); // plant is doing well
+  } else if (currentHumidityState==2) {
+    animation(dryPlantAni, 550, 449) // plant is in drought
+  }
+  
   }
 
 function drawWallpaper (wXpos,barWidth){

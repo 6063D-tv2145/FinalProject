@@ -1,6 +1,3 @@
-const int noWater = 3531;
-const int water = 1973;
-
 void setup() {
   Serial.begin(9600);
 }

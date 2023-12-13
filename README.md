@@ -1,3 +1,19 @@
+# Milestone III  
+In this last milestone, I wanted to get the most key parts done, the following progress has been achieved since last week:
+- figured out how to use sprites, and try to animate them using commands from p5.play (the final sprite will be digitally illustrated, this week was about figuring out the mechanism)  
+[![GZo1j4.th.png](https://imgpile.com/images/GZo1j4.th.png)](https://imgpile.com/i/GZo1j4)  
+- create the backdrop setting  
+[![GZo5fh.th.png](https://imgpile.com/images/GZo5fh.th.png)](https://imgpile.com/i/GZo5fh)  
+- window with changing colors in accordance to the hour of the day (I made it work but I don't really like the current colors so those will change)
+- further calibrating the sensor for accurate soil humidity indication
+
+Upon consultation with you, I want to collect the averages, but for some reason that did not work when I tried the code, as no values were being sent over. So I will try it again after class on Weds.   
+  
+Additionally, I purchased polymer clay to create the plant buddy. This coming week I will focus on polishing the visual of the plant buddy sprite, and create the physical enclosure for the arduino and its chords.  
+  
+  In response to last week's feedback, I am linking my humidity sensor here: 
+    [Capacitive Soil Moisture Sensor](https://www.amazon.com/dp/B07SYBSHGX?psc=1&ref=ppx_yo2ov_dt_b_product_details)  
+      
 # Milestone II
 **Plant Buddy**  
 The project will be called Plant Buddy -- a smart assistant for kids' first plant. I am using a moisture sensor, which is feeding information into a p5.js sketch. Throughout the midterm, I realized I very much enjoy making gamified products, especially geared toward a younger audience. I think there is importance to introducing technology as a practical and helpful tool in early development, rather than a purely entertainment.
