@@ -1,4 +1,4 @@
-const int AVGSIZE = 20;
+const int AVGSIZE = 15;
 
 int AVG[AVGSIZE];
 int currentIndex;

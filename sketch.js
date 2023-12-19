@@ -1,4 +1,5 @@
 let mSerial;
+let connectButton;
 let readyToRead;
 let currentHour;
 
@@ -6,42 +7,35 @@ let dryPlantAni;
 let drowningPlantAni;
 let goodPlantAni;
 
+let curtains;
 let currentHumidityState=0;
 
 
 
 let windowColors = [
-  // /Night
-  [226, 208, 217], // 00:00 
-  [217, 194, 210], // 01:00 
-  [204, 172, 182], // 02:00 
-  [191, 176, 154], // 03:00 
-  [178, 148, 126], // 04:00 
-
-  //Sunrise
-  [165, 123, 98], // 05:00 
-  [151, 98, 70], // 06:00 
-  [137, 73, 42], // 07:00
-  [124, 54, 14], // 08:00 
-  [110, 35, 0], // 09:00 
-
-  // Day
-  [243, 233, 210], // 10:00 
-  [249, 226, 181], // 11:00 
-  [253, 242, 154], // 12:00 
-  [248, 240, 128], // 13:00 
-  [241, 229, 106], // 14:00
-  [235, 220, 84], // 15:00 
-  [228, 211, 62], // 16:00 
-  [221, 201, 40], // 17:00 
-
-  // Sunset 
-  [207, 192, 0], // 18:00
-  [207, 183, 0], // 19:00
-  [245, 226, 217], // 20:00
-  [242, 208, 202], // 21:00 
-  [237, 190, 203], // 22:00 
-  [232, 169, 202], // 23:00
+[0, 34, 86], //0
+[58, 42, 102], //1
+[100, 49, 112], //2
+[139, 56, 117], //3
+[175, 66, 117], //4
+[207, 81, 112], //5
+[233, 102, 104], //6
+[253, 127, 95], //7
+[255, 157, 86], //8
+[255, 189, 81], //9
+[255, 222, 85], //10
+[253, 255, 102],
+[255, 222, 85],
+[255, 189, 81],
+[255, 157, 86],
+[253, 127, 95],
+[233, 102, 104],
+[207, 81, 112],
+[175, 66, 117],
+[139, 56, 117],
+[100, 49, 112],
+[58, 42, 102],
+[0, 34, 86],
 ];
 
 
@@ -51,14 +45,24 @@ function connect(){
 
 }
 
+function connectToSerial() {
+  if (!mSerial.opened()) {
+    mSerial.open(9600);
+
+    readyToReceive = true;
+    connectButton.hide();
+  }
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   mSerial = createSerial();
   readyToRead=false;
 
-  let mConnectButton = createButton("Connect To Serial");
-  mConnectButton.position(width / 2, height / 2);
-  mConnectButton.mousePressed(connect);
+  connectButton = createButton("Connect To Serial");
+  connectButton.position(width / 2, height / 2);
+  connectButton.mousePressed(connectToSerial);
+
 
 
   dryPlantAni = loadAnimation(
@@ -66,6 +70,16 @@ function setup() {
 		'Assets/dryplant/plantbuddy-dry-02.png',
 		'Assets/dryplant/plantbuddy-dry-03.png',
 		'Assets/dryplant/plantbuddy-dry-04.png',
+    'Assets/dryplant/plantbuddy-dry-05.png',
+    'Assets/dryplant/plantbuddy-dry-06.png',
+    'Assets/dryplant/plantbuddy-dry-07.png',
+    'Assets/dryplant/plantbuddy-dry-08.png',
+    'Assets/dryplant/plantbuddy-dry-09.png',
+    'Assets/dryplant/plantbuddy-dry-10.png',
+    'Assets/dryplant/plantbuddy-dry-11.png',
+    'Assets/dryplant/plantbuddy-dry-12.png',
+    'Assets/dryplant/plantbuddy-dry-01.png',
+
     );
 
   dryPlantAni.frameDelay = 10;
@@ -75,6 +89,9 @@ function setup() {
 		'Assets/drowningplant/plantbuddy-drowning-02.png',
 		'Assets/drowningplant/plantbuddy-drowning-03.png',
 		'Assets/drowningplant/plantbuddy-drowning-04.png',
+    'Assets/drowningplant/plantbuddy-drowning-05.png',
+    'Assets/drowningplant/plantbuddy-drowning-06.png',
+    'Assets/drowningplant/plantbuddy-drowning-07.png',
     );
 
   drowningPlantAni.frameDelay = 10;
@@ -84,9 +101,21 @@ function setup() {
 		'Assets/goodplant/plantbuddy-good-02.png',
 		'Assets/goodplant/plantbuddy-good-03.png',
 		'Assets/goodplant/plantbuddy-good-04.png',
+    'Assets/goodplant/plantbuddy-good-05.png',
+    'Assets/goodplant/plantbuddy-good-06.png',
+    'Assets/goodplant/plantbuddy-good-07.png',
+    'Assets/goodplant/plantbuddy-good-08.png',
+    'Assets/goodplant/plantbuddy-good-09.png',
+    'Assets/goodplant/plantbuddy-good-10.png',
+    'Assets/goodplant/plantbuddy-good-11.png',
+    'Assets/goodplant/plantbuddy-good-12.png',
     );
 
   goodPlantAni.frameDelay = 10;
+
+  // Background Asset Loading
+  curtains = loadImage('Assets/window.png');
+  IBMPlex = loadFont('Assets/IBMPlexMono-SemiBold.ttf')
 
 
 }
@@ -101,7 +130,7 @@ function draw() {
     }
 
     //table
-    fill(255, 209, 179)
+    fill(255,199,180)
     rect(0,windowHeight/1.3,windowWidth,windowHeight)
 
 
@@ -117,48 +146,82 @@ function draw() {
   stroke("white");
   strokeWeight(3)
   rectMode(CENTER)
-  rect(windowWidth/2, windowHeight/3, 600, 450, 20);
+  rect(windowWidth/2, windowHeight/3, 800, 450, 20);
 
+// Curaints + Window Lines
+  imageMode(CENTER)
+  image(curtains,windowWidth/2, windowHeight/3);
+
+
+// Plant sensor info + Animation triggers
   if (mSerial.opened() && readyToRead){
     mSerial.clear();
     mSerial.write(10);
     readyToRead = false;
   }
 
+  let humidity = mSerial.readUntil ("\n");
+
   if (mSerial.opened() && mSerial.availableBytes() > 0) {
-    let humidity = mSerial.readUntil ("\n");
     print(humidity);
 
 
     if (humidity < 2700) {
-      currentHumidityState=0
-      // clear();
-      // animation(drowningPlantAni, 550, 450); //plant is "drowning"
+      currentHumidityState=0 //plant is "drowning"
     } else if (humidity < 3299) {
-      currentHumidityState=1
-      // clear();
-      // animation(goodPlantAni, 550, 450); // plant is doing well
+      currentHumidityState=1 // plant is doing well
     } else if (humidity > 3298) {
-      currentHumidityState=2
-      // clear();
-      // animation(dryPlantAni, 550, 449) // plant is in drought
+      currentHumidityState=2  // plant is in drought
     }
 
-  
-// keeping track of the 4 last values, and only shift the sprite when the last 4 have been the same
-// week 12 -- taking an average; would manage the spikes; consistent values; after the average, send over the average to print instead of the raw value
-// make a global variable that keeps track of which state I am in -- and the if statement updates the variable;
+
     readyToRead = true;
   } 
 
   if (currentHumidityState==0) {
-    animation(drowningPlantAni, 550, 450); //plant is "drowning"
+    animation(drowningPlantAni, windowWidth/2, windowHeight/2); //plant is "drowning"
   } else if (currentHumidityState==1) {
-    animation(goodPlantAni, 550, 450); // plant is doing well
+    animation(goodPlantAni,windowWidth/2, windowHeight/2); // plant is doing well
   } else if (currentHumidityState==2) {
-    animation(dryPlantAni, 550, 449) // plant is in drought
+    animation(dryPlantAni, windowWidth/2, windowHeight/2) // plant is in drought
   }
   
+
+  // // Alarm Clock
+  //   let h = hour();
+  //   let m = minute();
+  //   let s = second();
+
+  //   h = nf(h, 2);
+  //   m = nf(m, 2);
+  //   s = nf(s, 2);
+
+  
+  //   // clock shape
+  //   rectMode(CENTER)
+  //   ellipseMode(CENTER)
+
+  //   noStroke()
+  //   // fill(80,255,185);
+  //   // ellipse(150, windowHeight-150, 40, 40)
+
+  //   fill(0,105,203);
+  //   ellipse(110, windowHeight-55, 40, 40)
+  //   ellipse(190, windowHeight-55, 40, 40)
+
+  //   fill(0,116,223);
+  //   rect(150, windowHeight-100, 180, 100,24);
+
+
+  
+  //   // Display the time 
+  //   fill(255);
+  //   textFont(IBMPlex)
+  //   textAlign(CENTER, CENTER);
+  //   textSize(24);
+  //   text(`Time`, 150, windowHeight-125);
+  //   textSize(32);
+  //   text(`${h}:${m}:${s}`, 150, windowHeight-95);
   }
 
 function drawWallpaper (wXpos,barWidth){

@@ -1,3 +1,25 @@
+# Plant Buddy (Final Submission)  
+Plant Buddy is a children's plant watering assistant, indicating plants' needs based on soil moisture levels. Additionally, there is a window that changes color based on the hour of the day, providing the simulation of daylight & a plant's circadian rythm. I thought this project would be relevant for several reasons. A lot of our readings talked about technology being used as a way to paint a skewed picture of reality, and they had quite negative connotations when discussing its impact on human life. I wanted to create something that would be useful in relation to real-life objects/skills. I find it important to introduce tech as a tool, rather than as pure reward/entertainment.  
+  
+  
+**System diagram**  
+
+  
+**FSM diagram**  
+Because this project does not have any states/does not require user input, and relies on a continuous stream of live data, there is no FSM.  
+  
+**Circuit diagram**  
+
+  
+**Additional Info**  
+I am using an external library, p5.play to animate sprites to indicate the soil moisture of the plant. The data is being fed through a capacitative soil moisture sensor, that is connected to the Arduino.  
+
+**Process**  
+I went through a number of iterations regarding this project. I was quite clear on the fact that I wanted to experiment with a soil moisture sensor from the beginning, however, the finished product went through some stages of iteration. Initially, I wanted this to be a plant sitting tool, allowing the owner to have access to the information even when not present, however, I found that with the way arudino-p5.js connection works, that would not be feasible. I moved on to brainstorming a context where such real-time information would be useful, on the spot.  
+
+Furthermore, I originally wanted the arduino, and the sensor to be enclosed in an object that could be directly put into soil, however, I found that it would be too bulky, and decided to separate out the chords + arduino enclosure, and tie together in a narrative that makes sense (= string phone).
+  
+After user testing, I removed a clock that I had put next to the plant buddy in the p5.js sketch, upon getting the feedback that the user 
 # Milestone III  
 In this last milestone, I wanted to get the most key parts done, the following progress has been achieved since last week:
 - figured out how to use sprites, and try to animate them using commands from p5.play (the final sprite will be digitally illustrated, this week was about figuring out the mechanism)  
