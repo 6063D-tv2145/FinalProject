@@ -13,29 +13,30 @@ let currentHumidityState=0;
 
 
 let windowColors = [
-[0, 34, 86], //0
-[58, 42, 102], //1
-[100, 49, 112], //2
-[139, 56, 117], //3
-[175, 66, 117], //4
-[207, 81, 112], //5
-[233, 102, 104], //6
-[253, 127, 95], //7
-[255, 157, 86], //8
-[255, 189, 81], //9
-[255, 222, 85], //10
-[253, 255, 102],
-[255, 222, 85],
-[255, 189, 81],
-[255, 157, 86],
-[253, 127, 95],
-[233, 102, 104],
-[207, 81, 112],
-[175, 66, 117],
-[139, 56, 117],
-[100, 49, 112],
-[58, 42, 102],
-[0, 34, 86],
+[0, 34, 86], //12 AM
+[58, 42, 102], //1 AM
+[100, 49, 112], //2 AM
+[139, 56, 117], //3 AM
+[175, 66, 117], //4 AM
+[207, 81, 112], //5 AM
+[233, 102, 104], //6 AM
+[253, 127, 95], //7 AM
+[255, 157, 86], //8 AM
+[255, 189, 81], //9 AM
+[255, 222, 85], //10 AM
+[253, 255, 102], //11 AM
+[255, 222, 85], //12 PM
+[255, 189, 81], //1 PM
+[255, 157, 86], //2 PM
+[253, 127, 95], //3 PM
+[233, 102, 104], //4 PM
+[207, 81, 112], //5 PM
+[175, 66, 117], //6 PM
+[139, 56, 117], //7 PM
+[100, 49, 112], //8 PM
+[58, 42, 102], //9 PM
+[0, 34, 86], //10 PM
+[58, 42, 102], //11 PM
 ];
 
 
@@ -167,7 +168,7 @@ function draw() {
 
 
     if (humidity < 2700) {
-      currentHumidityState=0 //plant is "drowning"
+      currentHumidityState=0 //plant is overwatered
     } else if (humidity < 3299) {
       currentHumidityState=1 // plant is doing well
     } else if (humidity > 3298) {
@@ -179,7 +180,7 @@ function draw() {
   } 
 
   if (currentHumidityState==0) {
-    animation(drowningPlantAni, windowWidth/2, windowHeight/2); //plant is "drowning"
+    animation(drowningPlantAni, windowWidth/2, windowHeight/2); //plant is overwatered
   } else if (currentHumidityState==1) {
     animation(goodPlantAni,windowWidth/2, windowHeight/2); // plant is doing well
   } else if (currentHumidityState==2) {
@@ -187,7 +188,7 @@ function draw() {
   }
   
 
-  // // Alarm Clock
+  // // Alarm Clock (Removed based on feedback)
   //   let h = hour();
   //   let m = minute();
   //   let s = second();
